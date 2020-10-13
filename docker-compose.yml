@@ -1,0 +1,12 @@
+version: '3'
+services:
+ php:
+  build:
+   context: ./
+   dockerfile: php/docker/Dockerfile
+  volumes:
+   - ./php/:/var/www/html/
+ mailhog:
+  image: mailhog/mailhog
+  ports:
+   - "8025:8025" #webインターフェース用ポート
